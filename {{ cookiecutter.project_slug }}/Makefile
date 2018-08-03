@@ -20,7 +20,7 @@ DIRROOT={{ cookiecutter.dirroot }}
 init:
 	mv ./config.php ./html && \
 	sudo -k chown www-data:www-data ./data && \
-	sudo chmod www-data:www-data ./data
+	sudo chmod 774 ./data
 
 install-db:
 	docker-compose exec db-mysql mysql -u root -pRoot123. -e 'DROP DATABASE IF EXISTS ${DB_NAME}; CREATE DATABASE ${DB_NAME} DEFAULT CHARACTER SET ${DB_CHARSET} COLLATE ${DB_COLLATE}; GRANT ALL ON ${DB_NAME}.* TO ${DB_USER} IDENTIFIED BY "${ADMIN_PASS}"'
