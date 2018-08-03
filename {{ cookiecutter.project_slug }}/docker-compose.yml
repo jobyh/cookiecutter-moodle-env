@@ -21,7 +21,7 @@ services:
     #image: php5.6-apache
     image: php7.1-apache
     depends_on:
-      - db
+      - db-mysql
     volumes:
       - ./html:/var/www/html
       - ./data:/var/www/data
