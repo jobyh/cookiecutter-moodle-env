@@ -1,4 +1,4 @@
-.PHONY: install-db upgrade-db dummy-content phpunit-init purge-caches
+.PHONY: install-db upgrade-db dummy-content phpunit-init purge-caches init
 
 DB_NAME={{ cookiecutter.db_name }}
 DB_USER={{ cookiecutter.db_user }}
@@ -16,6 +16,11 @@ SITE_FULLNAME={{ cookiecutter.site_fullname }}
 SITE_SHORTNAME={{ cookiecutter.site_shortname }}
 
 DIRROOT={{ cookiecutter.dirroot }}
+install-db:
+	mv ./config.php ./html && \
+	sudo -k chown www-data:www-data ./data && \
+	sudo chmod www-data:www-data ./data
+
 install-db:
 	docker-compose exec db-mysql mysql -u root -pRoot123. -e 'DROP DATABASE IF EXISTS ${DB_NAME}; CREATE DATABASE ${DB_NAME} DEFAULT CHARACTER SET ${DB_CHARSET} COLLATE ${DB_COLLATE}; GRANT ALL ON ${DB_NAME}.* TO ${DB_USER} IDENTIFIED BY "${ADMIN_PASS}"'
 	docker-compose exec webserver php ${DIRROOT}/admin/cli/install_database.php \
