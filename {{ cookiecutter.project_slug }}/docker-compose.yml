@@ -16,7 +16,7 @@ services:
       MYSQL_USER: totara
       MYSQL_PASSWORD: Totara123.
     ports:
-      - "3308:3306"
+      - "3306:3306"
   webserver:
     #image: php5.6-apache
     image: php7.1-apache
@@ -26,7 +26,7 @@ services:
       - ./html:/var/www/html
       - ./data:/var/www/data
     ports:
-      - "85:80"
+      - "80:80"
     restart: always
     environment:
       - OPCACHE_ENABLE_CLI=0
