@@ -1,0 +1,11 @@
+{
+    "project_slug": "moodle-env",
+    "site_fullname": "Moodle Development",
+    "site_shortname": "Moodle Dev",
+    "db_name": "moodle",
+    "db_user": "moodle",
+    "db_pass": "Moodle123.",
+    "data_root": "/var/www/data",
+    "admin_pass": "Moodle123.",
+    "admin_email": "admin@example.com"
+}
