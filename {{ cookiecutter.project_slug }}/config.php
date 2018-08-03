@@ -109,7 +109,7 @@ $CFG->wwwroot   = 'http://kratos';
 //
 // - On Windows systems you might specify something like 'c:\moodledata'
 
-$CFG->dataroot  = '{{ cookiecutter.data_root }}';
+$CFG->dataroot  = '{{ cookiecutter.dataroot }}';
 
 
 //=========================================================================

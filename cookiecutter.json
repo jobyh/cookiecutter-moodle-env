@@ -5,7 +5,8 @@
     "db_name": "moodle",
     "db_user": "moodle",
     "db_pass": "Moodle123.",
-    "data_root": "/var/www/data",
+    "dirroot": "/var/www/html",
+    "dataroot": "/var/www/data",
     "admin_pass": "Moodle123.",
     "admin_email": "admin@example.com"
 }
