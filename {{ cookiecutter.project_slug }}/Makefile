@@ -16,7 +16,8 @@ SITE_FULLNAME={{ cookiecutter.site_fullname }}
 SITE_SHORTNAME={{ cookiecutter.site_shortname }}
 
 DIRROOT={{ cookiecutter.dirroot }}
-install-db:
+
+init:
 	mv ./config.php ./html && \
 	sudo -k chown www-data:www-data ./data && \
 	sudo chmod www-data:www-data ./data
