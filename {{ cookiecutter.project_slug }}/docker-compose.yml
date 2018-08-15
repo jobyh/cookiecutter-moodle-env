@@ -5,16 +5,16 @@ services:
 #   selenium:
 #     image: selenium/standalone-chrome
   db-mysql:
-    image: mysql:5.7
     #image: mysql:5.5
+    image: mysql:5.7
     volumes:
       - db_data:/var/lib/mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: Root123.
-      MYSQL_DATABASE: totara
-      MYSQL_USER: totara
-      MYSQL_PASSWORD: Totara123.
+      MYSQL_ROOT_PASSWORD: {{ cookiecutter.db_root_pass }}
+      MYSQL_DATABASE: {{ cookiecutter.db_name }}
+      MYSQL_USER: {{ cookiecutter.db_user }}
+      MYSQL_PASSWORD: {{ cookiecutter.db_pass }}
     ports:
       - "3306:3306"
   webserver:
