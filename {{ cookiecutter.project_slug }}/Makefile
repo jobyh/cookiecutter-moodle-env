@@ -37,9 +37,5 @@ upgrade-db:
 dummy-content:
 	docker-compose exec webserver php ${DIRROOT}/admin/tool/generator/cli/maketestsite.php --size=M
 
-phpunit-init:
-	docker-compose exec webserver chown www-data:www-data /var/www/html
-	docker-compose exec -u www-data webserver php ${DIRROOT}/admin/tool/phpunit/cli/init.php
-
 purge-caches:
 	docker-compose exec -u www-data webserver php ${DIRROOT}/admin/cli/purge_caches.php
