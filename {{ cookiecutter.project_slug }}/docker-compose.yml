@@ -18,8 +18,8 @@ services:
     ports:
       - "3306:3306"
   webserver:
-    #image: php5.6-apache
-    image: php7.1-apache
+    #image: jobyh/moodle-php:php5.6-apache
+    image: jobyh/moodle-php:php7.1-apache
     depends_on:
       - db-mysql
     volumes:
