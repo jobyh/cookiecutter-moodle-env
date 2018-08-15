@@ -23,7 +23,7 @@ init:
 	sudo chmod 774 ./data
 
 install-db:
-	docker-compose exec db-mysql mysql -u root -pRoot123. -e 'DROP DATABASE IF EXISTS ${DB_NAME}; CREATE DATABASE ${DB_NAME} DEFAULT CHARACTER SET ${DB_CHARSET} COLLATE ${DB_COLLATE}; GRANT ALL ON ${DB_NAME}.* TO ${DB_USER} IDENTIFIED BY "${ADMIN_PASS}"'
+	docker-compose exec db-mysql mysql -u root -p{{ cookiecutter.db_root_pass }} -e 'DROP DATABASE IF EXISTS ${DB_NAME}; CREATE DATABASE ${DB_NAME} DEFAULT CHARACTER SET ${DB_CHARSET} COLLATE ${DB_COLLATE}; GRANT ALL ON ${DB_NAME}.* TO ${DB_USER} IDENTIFIED BY "${ADMIN_PASS}"'
 	docker-compose exec webserver php ${DIRROOT}/admin/cli/install_database.php \
 		--agree-license \
 		--adminpass=${ADMIN_PASS} \
