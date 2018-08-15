@@ -33,7 +33,7 @@ $ cookiecutter cookiecutter-moodle-env
 ```
 
 Change into the created directory and clone your Moodle or Totara
-into a directory called `html` theninitialise the environment.
+into a directory called `html` then initialise the environment.
 You only need to do this once:
 
 ```
