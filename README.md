@@ -20,7 +20,7 @@ Git URL:
 
 ```
 $ cd /path/to/where/you/want/the/environment
-$ cookiecutter git@github.com:jobyh/cookiecutter-moodle-env.git
+$ cookiecutter https://github.com/jobyh/cookiecutter-moodle-env.git
 ```
 You'll then be prompted for the `project_slug` (used to name the
 directory in which the environment will be created) and a number
