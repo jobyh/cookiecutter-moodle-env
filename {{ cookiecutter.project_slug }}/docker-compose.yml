@@ -8,7 +8,7 @@ services:
     #image: mysql:5.5
     image: mysql:5.7
     volumes:
-      - db_data:/var/lib/mysql
+      - ./db_data:/var/lib/mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: {{ cookiecutter.db_root_pass }}
@@ -37,4 +37,6 @@ services:
       - "1080:1080"  # web interface
       - "1025:1025"  # SMTP port: set $CFG->smtphosts='mailcatcher:1025';
 volumes:
+  html:
+  data:
   db_data:
